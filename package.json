@@ -1,0 +1,26 @@
+{
+  "name": "appointments",
+  "version": "1.0.0",
+  "description": "Appointments system",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "example.com"
+  },
+  "author": "Mike Kienenberger",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7",
+    "jest": "^28.0.3"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.17.9",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}
