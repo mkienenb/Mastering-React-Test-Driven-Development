@@ -12,7 +12,7 @@ describe('Appointment', () => {
         expect(container.textContent).toMatch(`Ashley`);
     });
 
-    it.skip('renders another customer first name', () => {
+    it('renders another customer first name', () => {
         const customer = {firstName: 'Jordan'};
         const container = document.createElement('div');
 
