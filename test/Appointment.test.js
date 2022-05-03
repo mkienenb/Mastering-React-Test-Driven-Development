@@ -14,7 +14,7 @@ describe('Appointment', () => {
         expect(document.body.textContent).toMatch(`Ashley`);
     });
 
-    it('renders another customer first name', () => {
+    it.skip('renders another customer first name', () => {
         const customer = {firstName: 'Jordan'};
         const component = <Appointment customer={customer}/>;
         const container = document.createElement('div');
