@@ -6,7 +6,7 @@ const appointmentTimeOfDay = startsAt => {
     // return "12:00";
 }
 
-export const Appointment = ({customer}) => <div>
+export const Appointment = ({customer, stylist}) => <div>
     <table>
         <tbody>
         <tr>
@@ -23,6 +23,22 @@ export const Appointment = ({customer}) => <div>
             </td>
             <td id="appointmentCustomerLastName">
                 {customer.lastName}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Customer Phone Number:
+            </td>
+            <td id="appointmentCustomerPhoneNumber">
+                {customer.phoneNumber}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Stylist:
+            </td>
+            <td id="appointmentStylist">
+                {stylist}
             </td>
         </tr>
         </tbody>
