@@ -30,11 +30,11 @@ describe('AppointmentsDayView', () => {
     const appointments = [
         {
             startsAt: today.setHours(12, 0),
-            customer: {firstName: 'Ashley'}
+            customer: {firstName: 'Ashley', lastName: 'Benton'}
         },
         {
             startsAt: today.setHours(13, 0),
-            customer: {firstName: 'Jordan'}
+            customer: {firstName: 'Jordan', lastName: 'Kline'}
         }
     ];
     let container;
@@ -89,5 +89,10 @@ describe('AppointmentsDayView', () => {
     it('renders selected appointment in a table', () => {
         render(<AppointmentsDayView appointments={appointments}/>);
         expect(container.querySelectorAll('table #appointmentCustomerFirstName')[0].textContent).toMatch('Ashley');
+    });
+
+    it('renders last name for selected appointment', () => {
+        render(<AppointmentsDayView appointments={appointments}/>);
+        expect(container.querySelectorAll('table #appointmentCustomerLastName')[0].textContent).toMatch('Benton');
     });
 });
