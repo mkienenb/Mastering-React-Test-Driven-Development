@@ -30,11 +30,13 @@ describe('AppointmentsDayView', () => {
     const appointments = [
         {
             startsAt: today.setHours(12, 0),
-            customer: {firstName: 'Ashley', lastName: 'Benton'}
+            customer: {firstName: 'Ashley', lastName: 'Benton', phoneNumber: '123-5678'},
+            stylist: 'Judy'
         },
         {
             startsAt: today.setHours(13, 0),
-            customer: {firstName: 'Jordan', lastName: 'Kline'}
+            customer: {firstName: 'Jordan', lastName: 'Kline', phoneNumber: '321-9876'},
+            stylist: 'Joe'
         }
     ];
     let container;
@@ -93,6 +95,16 @@ describe('AppointmentsDayView', () => {
 
     it('renders last name for selected appointment', () => {
         render(<AppointmentsDayView appointments={appointments}/>);
-        expect(container.querySelectorAll('table #appointmentCustomerLastName')[0].textContent).toMatch('Benton');
+        expect(container.querySelector('#appointmentCustomerLastName').textContent).toMatch('Benton');
+    });
+
+    it('renders phone number for selected appointment', () => {
+        render(<AppointmentsDayView appointments={appointments}/>);
+        expect(container.querySelector('#appointmentCustomerPhoneNumber').textContent).toMatch('123-5678');
+    });
+
+    it('renders stylist for selected appointment', () => {
+        render(<AppointmentsDayView appointments={appointments}/>);
+        expect(container.querySelector('#appointmentStylist').textContent).toMatch('Judy');
     });
 });
