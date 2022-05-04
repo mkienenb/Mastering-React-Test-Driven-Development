@@ -32,7 +32,8 @@ describe('AppointmentsDayView', () => {
             startsAt: today.setHours(12, 0),
             customer: {firstName: 'Ashley', lastName: 'Benton', phoneNumber: '123-5678'},
             stylist: 'Judy',
-            service: 'Coloring'
+            service: 'Coloring',
+            notes: 'Likes Pink'
         },
         {
             startsAt: today.setHours(13, 0),
@@ -90,6 +91,7 @@ describe('AppointmentsDayView', () => {
         expect(container.textContent).toMatch('Jordan');
     });
 
+    // Is this really a useful test?  What if presentation changes later?
     it('renders selected appointment in a table', () => {
         render(<AppointmentsDayView appointments={appointments}/>);
         expect(container.querySelectorAll('table #appointmentCustomerFirstName')[0].textContent).toMatch('Ashley');
@@ -113,5 +115,22 @@ describe('AppointmentsDayView', () => {
     it('renders salon service for selected appointment', () => {
         render(<AppointmentsDayView appointments={appointments}/>);
         expect(container.querySelector('#appointmentService').textContent).toMatch('Coloring');
+    });
+
+    it('renders notes for selected appointment', () => {
+        render(<AppointmentsDayView appointments={appointments}/>);
+        expect(container.querySelector('#appointmentNotes').textContent).toMatch('Likes Pink');
+    });
+
+    it('renders no notes for second appointment if notes not defined', () => {
+        render(<AppointmentsDayView appointments={appointments}/>);
+        const button = container.querySelectorAll('button')[1];
+        ReactTestUtils.Simulate.click(button);
+        expect(container.querySelector('#appointmentNotes').textContent).toEqual('');
+    });
+
+    it('renders header for selected appointment', () => {
+        render(<AppointmentsDayView appointments={appointments}/>);
+        expect(container.querySelector('#appointmentHeader').textContent).toEqual("Today's appointment at 12:00");
     });
 });
