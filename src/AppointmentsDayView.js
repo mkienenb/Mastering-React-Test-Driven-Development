@@ -10,8 +10,19 @@ export const Appointment = ({customer}) => <div>
     <table>
         <tbody>
         <tr>
+            <td>
+                Customer first name:
+            </td>
             <td id="appointmentCustomerFirstName">
                 {customer.firstName}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Customer last name:
+            </td>
+            <td id="appointmentCustomerLastName">
+                {customer.lastName}
             </td>
         </tr>
         </tbody>
