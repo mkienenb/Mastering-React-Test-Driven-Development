@@ -6,7 +6,17 @@ const appointmentTimeOfDay = startsAt => {
     // return "12:00";
 }
 
-export const Appointment = ({customer}) => <div>{customer.firstName}</div>;
+export const Appointment = ({customer}) => <div>
+    <table>
+        <tbody>
+        <tr>
+            <td id="appointmentCustomerFirstName">
+                {customer.firstName}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>;
 
 export const AppointmentsDayView = ({appointments}) => {
     const [selectedAppointment, setSelectedAppointment] = useState(
