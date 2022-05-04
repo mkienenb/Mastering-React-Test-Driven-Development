@@ -85,4 +85,9 @@ describe('AppointmentsDayView', () => {
         ReactTestUtils.Simulate.click(button);
         expect(container.textContent).toMatch('Jordan');
     });
+
+    it('renders selected appointment in a table', () => {
+        render(<AppointmentsDayView appointments={appointments}/>);
+        expect(container.querySelectorAll('table #appointmentCustomerFirstName')[0].textContent).toMatch('Ashley');
+    });
 });
