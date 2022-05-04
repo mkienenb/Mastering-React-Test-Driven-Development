@@ -31,12 +31,14 @@ describe('AppointmentsDayView', () => {
         {
             startsAt: today.setHours(12, 0),
             customer: {firstName: 'Ashley', lastName: 'Benton', phoneNumber: '123-5678'},
-            stylist: 'Judy'
+            stylist: 'Judy',
+            service: 'Coloring'
         },
         {
             startsAt: today.setHours(13, 0),
             customer: {firstName: 'Jordan', lastName: 'Kline', phoneNumber: '321-9876'},
-            stylist: 'Joe'
+            stylist: 'Joe',
+            service: 'Beard Trim'
         }
     ];
     let container;
@@ -106,5 +108,10 @@ describe('AppointmentsDayView', () => {
     it('renders stylist for selected appointment', () => {
         render(<AppointmentsDayView appointments={appointments}/>);
         expect(container.querySelector('#appointmentStylist').textContent).toMatch('Judy');
+    });
+
+    it('renders salon service for selected appointment', () => {
+        render(<AppointmentsDayView appointments={appointments}/>);
+        expect(container.querySelector('#appointmentService').textContent).toMatch('Coloring');
     });
 });
