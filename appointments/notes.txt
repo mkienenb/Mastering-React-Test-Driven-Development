@@ -1,0 +1,16 @@
+Differences in setup for chapter 1:
+
+sudo npm install react@16.9.0 react-dom@16.9.0 -g
+
+npm install --save jest-environment-jsdom
+
+Add the following jest setting to the bottom of the package.json file.
+This is the opposite setting as the default has changed from what is shown on page 27.
+
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  }
+
+p 49 section 2 code shouldn't have a "return" statement yet.
+p 53 is missing code from 49 and 51.
