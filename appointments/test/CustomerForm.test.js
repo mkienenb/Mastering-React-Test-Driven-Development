@@ -20,7 +20,7 @@ describe('CustomerForm', () => {
     it('renders a form', ()=> {
         render(<CustomerForm />)
         expect(form('customer')).not.toBeNull();
-    })
+    });
 
     it('renders the first name field as a text box', () => {
         render(<CustomerForm />);
