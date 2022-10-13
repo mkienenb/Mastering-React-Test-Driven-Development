@@ -28,6 +28,9 @@
     "react": "^16.9.0-alpha.0",
     "react-dom": "^16.9.0-alpha.0"
   },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
   "prettier": {
     "singleQuote": true,
     "printWidth": 67,
