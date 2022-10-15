@@ -119,4 +119,13 @@ describe('CustomerForm', () => {
         itSavesExistingFieldValueWhenSubmitted('stylist');
         itSavesNewFieldValueWhenSubmitted('stylist', 'Joanne');
     })
+
+    describe('service field', () => {
+        itRendersAsATextBox('service');
+        itIncludesTheExistingValueFOrTheTextBox('service');
+        itRendersALabelForTheTextField('service', 'Service');
+        itAssignsAnIdThatMatchesTheLabelIdToTheTextField('service', 'service');
+        itSavesExistingFieldValueWhenSubmitted('service');
+        itSavesNewFieldValueWhenSubmitted('service', 'haircut');
+    })
 });
