@@ -34,10 +34,14 @@ describe('CustomerForm', () => {
     describe('first name field', () => {
         itRendersAsATextBox('firstName');
 
-        it('includes the existing value for the first name', () => {
-            render(<CustomerForm firstName="Ashley" />);
-            expect(field('firstName').value).toEqual('Ashley');
-        });
+        const itIncludesTheExistingValueFOrTheTextBox = () => {
+            it('includes the existing value for the first name', () => {
+                render(<CustomerForm firstName="Ashley"/>);
+                expect(field('firstName').value).toEqual('Ashley');
+            });
+        }
+
+        itIncludesTheExistingValueFOrTheTextBox();
 
         it('renders a label for the first name field', () => {
             render(<CustomerForm />);
