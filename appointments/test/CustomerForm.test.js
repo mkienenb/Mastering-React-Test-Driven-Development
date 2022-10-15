@@ -36,8 +36,8 @@ describe('CustomerForm', () => {
 
         const itIncludesTheExistingValueFOrTheTextBox = (fieldName) => {
             it('includes the existing value for the first name', () => {
-                render(<CustomerForm firstName="Ashley"/>);
-                expect(field(fieldName).value).toEqual('Ashley');
+                render(<CustomerForm firstName="someValue"/>);
+                expect(field(fieldName).value).toEqual('someValue');
             });
         }
 
