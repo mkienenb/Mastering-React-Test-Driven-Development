@@ -17,29 +17,29 @@ describe('CustomerForm', () => {
         });
     }
 
+    const itIncludesTheExistingValueFOrTheTextBox = (fieldName) => {
+        it('includes the existing value for the first name', () => {
+            render(<CustomerForm { ...{[fieldName]: "someValue"} } />);
+            expect(field(fieldName).value).toEqual('someValue');
+        });
+    }
     let render, container;
     beforeEach(() => {
         ({ render, container } = createContainer());
     });
+
     const form = id => container.querySelector(`form[id="${id}"]`);
 
     const labelFor = formElement => container.querySelector(`label[for="${formElement}"]`);
 
     const field = name => form('customer').elements[name];
-
     it('renders a form', ()=> {
         render(<CustomerForm />)
         expect(form('customer')).not.toBeNull();
     });
     describe('first name field', () => {
-        itRendersAsATextBox('firstName');
 
-        const itIncludesTheExistingValueFOrTheTextBox = (fieldName) => {
-            it('includes the existing value for the first name', () => {
-                render(<CustomerForm { ...{[fieldName]: "someValue"} } />);
-                expect(field(fieldName).value).toEqual('someValue');
-            });
-        }
+        itRendersAsATextBox('firstName');
 
         itIncludesTheExistingValueFOrTheTextBox('firstName');
 
