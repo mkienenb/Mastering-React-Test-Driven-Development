@@ -92,4 +92,13 @@ describe('CustomerForm', () => {
         itSavesExistingFieldValueWhenSubmitted('firstName');
         itSavesNewFieldValueWhenSubmitted('firstName', 'Jamie');
     })
+
+    describe('first name field', () => {
+        itRendersAsATextBox('lastName');
+        itIncludesTheExistingValueFOrTheTextBox('firstName');
+        itRendersALabelForTheTextField('firstName', 'First name');
+        itAssignsAnIdThatMatchesTheLabelIdToTheTextField('firstName', 'firstName');
+        itSavesExistingFieldValueWhenSubmitted('firstName');
+        itSavesNewFieldValueWhenSubmitted('firstName', 'Jamie');
+    })
 });
