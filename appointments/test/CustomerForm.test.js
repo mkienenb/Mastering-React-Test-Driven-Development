@@ -110,4 +110,13 @@ describe('CustomerForm', () => {
         itSavesExistingFieldValueWhenSubmitted('phoneNumber');
         itSavesNewFieldValueWhenSubmitted('phoneNumber', '5551212');
     })
+
+    describe('stylist field', () => {
+        itRendersAsATextBox('stylist');
+        itIncludesTheExistingValueFOrTheTextBox('stylist');
+        itRendersALabelForTheTextField('stylist', 'Stylist');
+        itAssignsAnIdThatMatchesTheLabelIdToTheTextField('stylist', 'stylist');
+        itSavesExistingFieldValueWhenSubmitted('stylist');
+        itSavesNewFieldValueWhenSubmitted('stylist', 'Joanne');
+    })
 });
