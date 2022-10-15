@@ -11,33 +11,33 @@ describe('CustomerForm', () => {
     }
 
     const itRendersAsATextBox = (fieldName) => {
-        it('renders the first name field as a text box', () => {
+        it('renders the field as a text box', () => {
             render(<CustomerForm/>);
             expectToBeInputFieldOfTypeText(field(fieldName));
         });
     }
 
     const itIncludesTheExistingValueFOrTheTextBox = (fieldName) => {
-        it('includes the existing value for the first name', () => {
+        it('includes the existing value for the textField', () => {
             render(<CustomerForm { ...{[fieldName]: "someValue"} } />);
             expect(field(fieldName).value).toEqual('someValue');
         });
     }
     const itRendersALabelForTheTextField = (fieldName, fieldLabelText) => {
-        it('renders a label for the first name field', () => {
+        it('renders a label for the textField', () => {
             render(<CustomerForm/>);
             expect(labelFor(fieldName)).not.toBeNull();
             expect(labelFor(fieldName).textContent).toEqual(fieldLabelText);
         })
     };
     const itAssignsAnIdThatMatchesTheLabelIdToTheTextField = (fieldName, fieldId) => {
-        it('assigns an id that matches the label id to the first name field', () => {
+        it('assigns an id that matches the label id to the textField', () => {
             render(<CustomerForm/>);
             expect(field(fieldName).id).toEqual(fieldId);
         });
     }
     const itSavesExistingFieldValueWhenSubmitted = (fieldName) => {
-        it('saves existing first name when submitted', async () => {
+        it('saves existing field value when submitted', async () => {
             expect.hasAssertions();
             render(
                 <CustomerForm
@@ -52,7 +52,7 @@ describe('CustomerForm', () => {
     }
 
     const itSavesNewFieldValueWhenSubmitted = (fieldName, newValue) => {
-        it('saves new first name when submitted', async () => {
+        it('saves new field value when submitted', async () => {
             expect.hasAssertions();
             render(
                 <CustomerForm
