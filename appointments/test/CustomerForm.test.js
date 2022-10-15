@@ -30,6 +30,13 @@ describe('CustomerForm', () => {
             expect(labelFor(fieldName).textContent).toEqual(fieldLabelText);
         })
     };
+    const itAssignsAnIdThatMatchesTheLabelIdToTheTextField = (fieldName, fieldId) => {
+        it('assigns an id that matches the label id to the first name field', () => {
+            render(<CustomerForm/>);
+            expect(field(fieldName).id).toEqual(fieldId);
+        });
+    }
+
     let render, container;
 
     beforeEach(() => {
@@ -51,11 +58,7 @@ describe('CustomerForm', () => {
 
         itIncludesTheExistingValueFOrTheTextBox('firstName');
         itRendersALabelForTheTextField('firstName', 'First name');
-
-        it('assigns an id that matches the label id to the first name field', () => {
-            render(<CustomerForm />);
-            expect(field('firstName').id).toEqual('firstName');
-        });
+        itAssignsAnIdThatMatchesTheLabelIdToTheTextField('firstName', 'firstName');
 
         it('saves existing first name when submitted', async () => {
             expect.hasAssertions();
