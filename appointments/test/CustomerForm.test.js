@@ -26,10 +26,10 @@ describe('CustomerForm', () => {
     });
 
     describe('first name field', () => {
-        const itRendersAsATextBox = () => {
+        const itRendersAsATextBox = (fieldName = 'firstName') => {
             it('renders the first name field as a text box', () => {
                 render(<CustomerForm/>);
-                expectToBeInputFieldOfTypeText(field('firstName'));
+                expectToBeInputFieldOfTypeText(field(fieldName));
             });
         }
         itRendersAsATextBox();
