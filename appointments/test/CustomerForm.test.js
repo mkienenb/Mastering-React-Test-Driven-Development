@@ -26,10 +26,13 @@ describe('CustomerForm', () => {
     });
 
     describe('first name field', () => {
-        it('renders the first name field as a text box', () => {
-            render(<CustomerForm />);
-            expectToBeInputFieldOfTypeText(field('firstName'));
-        });
+        const itRendersAsATextBox = () => {
+            it('renders the first name field as a text box', () => {
+                render(<CustomerForm/>);
+                expectToBeInputFieldOfTypeText(field('firstName'));
+            });
+        }
+        itRendersAsATextBox();
 
         it('includes the existing value for the first name', () => {
             render(<CustomerForm firstName="Ashley" />);
