@@ -93,12 +93,21 @@ describe('CustomerForm', () => {
         itSavesNewFieldValueWhenSubmitted('firstName', 'Jamie');
     })
 
-    describe('first name field', () => {
+    describe('last name field', () => {
         itRendersAsATextBox('lastName');
-        itIncludesTheExistingValueFOrTheTextBox('firstName');
-        itRendersALabelForTheTextField('firstName', 'First name');
-        itAssignsAnIdThatMatchesTheLabelIdToTheTextField('firstName', 'firstName');
-        itSavesExistingFieldValueWhenSubmitted('firstName');
-        itSavesNewFieldValueWhenSubmitted('firstName', 'Jamie');
+        itIncludesTheExistingValueFOrTheTextBox('lastName');
+        itRendersALabelForTheTextField('lastName', 'Last name');
+        itAssignsAnIdThatMatchesTheLabelIdToTheTextField('lastName', 'lastName');
+        itSavesExistingFieldValueWhenSubmitted('lastName');
+        itSavesNewFieldValueWhenSubmitted('lastName', 'Smith');
+    })
+
+    describe('phone number field', () => {
+        itRendersAsATextBox('phoneNumber');
+        itIncludesTheExistingValueFOrTheTextBox('phoneNumber');
+        itRendersALabelForTheTextField('phoneNumber', 'Phone number');
+        itAssignsAnIdThatMatchesTheLabelIdToTheTextField('phoneNumber', 'phoneNumber');
+        itSavesExistingFieldValueWhenSubmitted('phoneNumber');
+        itSavesNewFieldValueWhenSubmitted('phoneNumber', '5551212');
     })
 });
