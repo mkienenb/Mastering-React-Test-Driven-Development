@@ -14,3 +14,9 @@ This is the opposite setting as the default has changed from what is shown on pa
 
 p 49 section 2 code shouldn't have a "return" statement yet.
 p 53 is missing code from 49 and 51.
+
+The warning `Browserslist: caniuse-lite is outdated. Please run next command `npm update caniuse-lite browserslist`
+ may require the following command to fix.
+```
+npm --depth 20 update --save caniuse-lite browserslist
+```
