@@ -14,7 +14,7 @@ export const CustomerForm = ({
     const handleChangeLastName = ({ target }) =>
         setCustomer(customer => ({
             ...customer,
-            lastName: target.value
+            [target.name]: target.value
         }));
     const handleChangePhoneNumber = ({ target }) =>
         setCustomer(customer => ({
