@@ -54,5 +54,8 @@ export const CustomerForm = ({
                value={notes}
                onChange={handleChange}
         />
+        <input type="submit"
+               value="Add"
+        />
     </form>;
 };
